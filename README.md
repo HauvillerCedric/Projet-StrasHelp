@@ -1,79 +1,141 @@
-# Simple MVC
+# Projet. StrasHelp
 
-## Description
+Le projet StrasHelp est la réalisation d'un site internet pour une association. Le site vise à favoriser les échanges non-marchands de services de proximité (bricolage, cuisine, éducation) entre particuliers.
+Elle propose à ses membres bénévoles de proposer leurs services et à d’autres membres utilisateurs de les solliciter.
 
-This repository is a simple PHP MVC structure from scratch.
+## **Développement**
 
-It uses some cool vendors/libraries such as Twig and Grumphp.
-For this one, just a simple example where users can choose one of their databases and see tables in it.
+Il s'agit du deuxième projet de formation créé au sein de la Wild Code School après deux mois de formation. C'est un travail collaboratif réalisé par 4 personnes. Il vise à mettre en application les connaissances acquises en back-end, principalement en PHP
 
-## Steps
+## **Critères**
 
-1. Clone the repo from Github.
-2. Run `composer install`.
-3. Create _config/db.php_ from _config/db.php.dist_ file and add your DB parameters. Don't delete the _.dist_ file, it must be kept.
+Plusieurs critères ont été imposés pour le projet :
 
-```php
-define('APP_DB_HOST', 'your_db_host');
-define('APP_DB_NAME', 'your_db_name');
-define('APP_DB_USER', 'your_db_user_wich_is_not_root');
-define('APP_DB_PASSWORD', 'your_db_password');
-```
+* Durée de la réalisation : 5 semaines.
+* 100% responsive.
+* Utilisation d'un wireframe (Figma).
+* Réalisation d'un bakclog (Trello).
+* Utilisation de la méthode simple MVC.
+* Utilisation de la méthode agile.
+* Base de données : modèle logique des données (MLD) avec utilisation de MySQL.
+* HTML/CSS.
+* PHP.
+* GIT
+* Réalisation d'un CRUD (Create, Read, Update, Delete).
 
-4. Import _database.sql_ in your SQL server, you can do it manually or use the _migration.php_ script which will import a _database.sql_ file.
-5. Run the internal PHP webserver with `php -S localhost:8000 -t public/`. The option `-t` with `public` as parameter means your localhost will target the `/public` folder.
-6. Go to `localhost:8000` with your favorite browser.
-7. From this starter kit, create your own web application.
+## **Réalisation individuelle**
 
-### Windows Users
+Pour ce projet collaboratif, j'ai pris en charge la réalisation d'un CRUD pour les offres du site. L'objectif était de permettre à une personne inscrite sur le site de se connecter et de déposer une offre en utilisant un formulaire, puis de pouvoir modifier ou supprimer son offre.
 
-If you develop on Windows, you should edit you git configuration to change your end of line rules with this command :
 
-`git config --global core.autocrlf true`
+*Voici le formulaire pour déposer une offre*
 
-## Example
+<p align="center">
+    <a href="https://ibb.co/dKCB589"><img src="https://i.ibb.co/3h61CgX/depot-offre.jpg" alt="depot-offre" border="0"></a>
+</p>
 
-An example (a basic list of items) is provided (you can load the _simple-mvc.sql_ file in a test database). The accessible URLs are :
+Une fois l'offre enregistrée, elle doit apparaître sur la page "Mes offres" en fonction de l'utilisateur connecté (session).
 
--   Home page at [localhost:8000/](localhost:8000/)
--   Items list at [localhost:8000/items](localhost:8000/items)
--   Item details [localhost:8000/items/show?id=:id](localhost:8000/item/show?id=2)
--   Item edit [localhost:8000/items/edit?id=:id](localhost:8000/items/edit?id=2)
--   Item add [localhost:8000/items/add](localhost:8000/items/add)
--   Item deletion [localhost:8000/items/delete?id=:id](localhost:8000/items/delete?id=2)
+*Voici la page permettant de visualiser les offres d'un utilisateur*
 
-You can find all these routes declared in the file `src/routes.php`. This is the very same file where you'll add your own new routes to the application.
+<p align="center">
+    <a href="https://ibb.co/R7jmL0k"><img src="https://i.ibb.co/kMmfY8s/mesoffres.jpg" alt="mesoffres" border="0"></a>
+    </p>
+    
+Comme toutes les offres postées par un utilisateur, celui-ci doit pouvoir les modifier.
 
-## How does URL routing work ?
+*En cliquant sur le stylo à côté de l'offre, l'utilisateur est renvoyé vers le formulaire de dépôt.*
 
-![simple_MVC.png](.tours/simple_MVC.png)
+<p align="center">
+    <a href="https://ibb.co/f8RsjNH"><img src="https://i.ibb.co/vs5S0dk/modifieoffre.jpg" alt="modifieoffre" border="0"></a>
+    </p>
+    
+*Message de confirmation*
 
-## Ask for a tour !
+<p align="center">
+    <a href="https://ibb.co/H2m25Ns"><img src="https://i.ibb.co/MhqhF84/confirmation.jpg" alt="confirmation" border="0"></a>
+    </p>
+    
+*La description de la première offre a été modifiée*
 
-<img src="./.tours/photo-1632178151697-fd971baa906f.jpg" alt="Guided tour" width="150"/>
+<p align="center">
+    <a href="https://ibb.co/rkj40y3"><img src="https://i.ibb.co/D4J5WKY/modif.jpg" alt="modif" border="0"></a>
+    </p>
+    
+Le CRUD se termine avec la suppression de l'offre en cliquant sur l'icône de suppression.
 
-We prepare a little guided tour to start with the simple-MVC.
+*Message de confirmation*
 
-To take it, you need to install the `Code Tour` extension for Visual Studio Code : [Code Tour](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour)
+<p align="center">
+    <a href="https://ibb.co/9grzhx7"><img src="https://i.ibb.co/02G8K0x/suppresion.jpg" alt="suppresion" border="0"></a>
+    </p>
+    
+*L'offre a été supprimée de la page*
 
-It will give access to a new menu on your IDE where you'll find the different tours about the simple-MVC. Click on play to start one :
+<p align="center">
+    <a href="https://ibb.co/fxp1m6R"><img src="https://i.ibb.co/rw67n8P/pagesupp.jpg" alt="pagesupp" border="0"></a>
+    </p>
+    
+## **Réalisation collective**
 
-![menu](.tours/code_tour_menu.png)
+Les tâches suivantes ont été effectuées en collaboration avec le groupe :
+* Élaboration du StyleGuide.
+* Réalisation de la base de données.
 
-## Run it on docker
+## **Réalisation des autres membres**
 
-If you don't know what is docker, skip this chapter. ;)
+Le travail collectif a été une réussite et a permis la réalisation des fonctionnalités suivantes :
 
-Otherwise, you probably see, this project is ready to use with docker.
+* Formulaire d'inscription sur le site.
+* Système de connexion et déconnexion.
+* Envoi de mails via PHPMailer.
+* Affichage de toutes les offres du site avec des filtres de recherche.
+* Création d'un compte administrateur pour le président de l'association, lui donnant accès à toutes les offres et fonctionnalités.
+* Création de popup pour se connecter et envoyer un mail.
 
-To build the image, go into the project directory and in your CLI type:
+## **Technologies**
 
-```
-docker build -t simple-mvc-container .
-```
+Les technologies utilisées sont :
 
-then, run it to open it on your localhot :
+* HTML.
+* CSS.
+* JavaScript.
+* GIT.
+* TWIG.
+* PHP.
+* Workbench.
+* Trello.
+* MYsql.
+* Composer.
+* PHPMailer.
 
-```
-docker run -i -t --name simple-mvc  -p 80:80 simple-mvc-container
-```
+<hr>
+<p align="center" style="font-size: 24px;">
+  <strong>Pour une meilleure visualisation, n'hésitez pas à télécharger le projet!!</strong>
+</p>
+
+<hr>
+
+**Attention**: Pour visualiser le projet, veuillez utiliser la commande `composer install`.
+
+
+## **Contact**
+* [Github](https://github.com/HauvillerCedric)
+* [Linkedin](https://www.linkedin.com/in/c%C3%A9dric-hauviller-970518272)
+* Adresse email : hauviller.cedric@gmail.com
+
+
+
+    
+
+    
+
+
+
+
+
+
+    
+
+    
+    
